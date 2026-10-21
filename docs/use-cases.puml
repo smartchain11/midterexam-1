@@ -1,0 +1,45 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor Scholar
+actor "Scholarship Staff" as Staff
+rectangle "Student Scholarship Monitoring and Academic Compliance System" {
+  usecase "UC01 Sign In" as Login
+  usecase "UC02 Register Scholar\nand Assign Policy" as Register
+  usecase "UC03 Submit Grades" as Submit
+  usecase "UC04 Correct and Resubmit" as Correct
+  usecase "UC05 View Own Status\nand History" as Own
+  usecase "UC06 Review Evidence\n--\nExtension point:\nevidence found unacceptable" as Review
+  usecase "Return Evidence" as Return
+  usecase "UC07 Evaluate Compliance" as Evaluate
+  usecase "UC08 Decide Renewal" as Renewal
+  usecase "UC09 View Dashboard" as Dashboard
+  usecase "UC10 Search and Filter" as Search
+  usecase "UC11 View Decision History" as History
+  usecase "UC12 Register Student Account\nand Confirm Email" as Signup
+  usecase "UC13 Approve Initial\nScholarship Assignment" as ApproveAssignment
+  usecase "Validate Summary" as Validate
+  usecase "Record Audit Event" as Audit
+}
+Scholar -- Login
+Staff -- Login
+Scholar -- Submit
+Scholar -- Correct
+Scholar -- Own
+Scholar -- Signup
+Staff -- Register
+Staff -- Review
+Staff -- Return
+Staff -- Evaluate
+Staff -- Renewal
+Staff -- Dashboard
+Staff -- Search
+Staff -- History
+Staff -- ApproveAssignment
+Submit ..> Validate : <<include>>
+Correct ..> Validate : <<include>>
+Evaluate ..> Audit : <<include>>
+Review ..> Audit : <<include>>
+Renewal ..> Audit : <<include>>
+Return ..> Review : <<extend>>\n[unacceptable evidence]
+@enduml

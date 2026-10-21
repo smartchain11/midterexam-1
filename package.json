@@ -1,0 +1,1 @@
+{"name":"scholarship-monitor","private":true,"type":"module","scripts":{"start":"node server.js","test":"node --test tests/*.test.js","setup:users":"node scripts/create-test-users.js"}}
