@@ -16,7 +16,7 @@ set role = 'Staff'
 where email = 'YOUR_STAFF_EMAIL';
 ```
 
-6. Copy `config.example.js` to `config.js`. Set `supabaseUrl` to your project's HTTPS URL and `supabaseAnonKey` to its publishable key or legacy anon key. These are public browser configuration values. Never use a secret or service-role key. `config.js` is excluded from Git to avoid accidentally publishing project-specific settings.
+6. This project's public Supabase URL and publishable key are included in `settings.js` as deployment defaults. For a different project or local override, copy `config.example.js` to `config.js` and set its `supabaseUrl` and `supabaseAnonKey`. A valid local override takes precedence. These are public browser configuration values. Never use a secret or service-role key. `config.js` remains excluded from Git; `settings.js` intentionally contains browser-public configuration only. Missing local configuration no longer blocks the hosted app when the public defaults are available. The optional administrator setup command still reads your local `config.js`.
 7. Install Node.js 20.11+ and run `npm start` in this folder. No npm install is necessary. Open `http://127.0.0.1:3000`.
 
 ```powershell
@@ -26,7 +26,15 @@ npm start
 
 If PowerShell blocks `npm.ps1`, use `npm.cmd start` / `npm.cmd test`, or `node server.js` / `node --test tests/policy.test.js`. No execution-policy change is needed.
 
-The optional Node server only serves static files; the application backend is Supabase. Any static web server or static host can serve `index.html`, `styles.css`, `app.js`, `domain.js`, your public `config.js`, and `assets/adssu-logo.png`. Do not serve database/test documents publicly. The included server restricts access to those browser files and the local logo. The logo is used in the header, login page and favicon; its source is recorded in `assets/README.md`.
+The optional Node server only serves static files; the application backend is Supabase. Static deployment requires `index.html`, `styles.css`, `app.js`, `domain.js`, `settings.js`, `catalogue.js`, `assets/adssu-logo.png`, and `data/scholarship-reference.json`. Include a public `config.js` only if using a local/project override. Do not serve database/test documents publicly. The included server uses an exact file allowlist, including the single public directory JSON file but no SQL/admin scripts. The logo is used in the header, login page and favicon; its source is recorded in `assets/README.md`.
+
+## Scholarship reference directory
+
+The public page and signed-in workspace include a searchable directory sourced from the user's other project, https://adssuscholarship.dev/. No login or additional SQL migration is needed to browse it. The snapshot contains 21 listings: 13 with document checklists and eight with incomplete lists. The default view shows the 13 checklist entries; select All listings or Missing document checklists to review the rest.
+
+Each requirements dialog preserves the reported grade label and document list, with warnings for conflicting/possibly duplicated entries and suspicious SHS values. All listings are marked not provider-verified. Missing benefits, deadlines and renewal rules stay unknown. See `docs/OTHER_PROJECT_REVIEW.md` and `data/scholarship-reference.json` for provenance.
+
+The directory is reference-only. It does not add any scholarship policy to the database, change the two exam policies, assign a scholarship, create an application or make eligibility/renewal decisions. There is deliberately no Apply button that would falsely imply a working application workflow for these additional programs.
 
 ## Configuration names
 
@@ -97,7 +105,7 @@ Administrative SQL Editor and service-role actions bypass these protections by d
 
 ## Tests and evidence
 
-Run `npm test` for independent policy-preview and browser-input-validation checks. These do **not** establish that Supabase RLS or RPCs work. The preview model is a test oracle, not used for production evaluation.
+Run `npm test` for independent policy-preview, browser-input-validation, directory search/data-integrity and public-configuration checks. These do **not** establish that Supabase RLS or RPCs work. The preview model is a test oracle, not used for production evaluation.
 
 After setup, run `database/03_functional_tests.sql` in SQL Editor. It switches to the actual `authenticated` PostgreSQL role and simulates staff/B01 JWT subjects to exercise real RLS, table grants and mutation functions. It covers TC01–TC10 database conditions and ends in `ROLLBACK`, preserving fixtures. It requires staff and B01 Auth accounts. Run it before changing the original fixtures; a manual workflow may change expected statuses. SQL notices show PASS results; any assertion failure aborts the transaction. If it aborts before ROLLBACK, issue `rollback;` before another query.
 
@@ -106,14 +114,16 @@ The SQL test does not prove browser refresh persistence or authentication-token 
 ## Deliverables
 
 - `docs/ANALYSIS.md`: A1–A6 and traceability.
-- `docs/use-cases.puml`: UML use-case diagram with two includes and one extend.
+- `docs/use-case-diagram.png`: clean 2700 × 2220 UML diagram, with actors on opposite sides and use cases between them.
+- `docs/use-case-diagram.svg`: editable vector version with the same layout.
+- `docs/use-cases.puml`: PlantUML semantic source with reused include behaviors and a conditional extend relationship.
 - `docs/erd.mmd`: Mermaid ERD.
 - `docs/ADSSU_PROGRAMS.md`: researched university courses, synthetic profile mapping, and safe upgrade instructions.
 - `docs/TEST_RESULTS.md`: expected results and honest execution status.
 - `evidence/README.md`: screenshot checklist.
 - `database/`: schema/access controls, six fixtures, ADSSU profile/catalogue upgrade, and transactional backend tests. Setup order is 01 → 02 → 04; the optional 03 script is the rollback test suite.
 
-Replace `StudentID` in the folder name with your actual ID. Add your name/program/date to the report. Render diagrams with instructor-approved PlantUML/Mermaid tools and attach images if required. Supply test-account access privately to the instructor, never in screenshots or Git. Submit a ZIP or GitHub repository URL as instructed; publishing is not performed automatically.
+Replace `StudentID` in the folder name with your actual ID. Add your name/program/date to the report. The use-case PNG and SVG are already rendered; render the ERD with an instructor-approved Mermaid tool if an image is required. To regenerate the exact use-case layout on Windows, run `powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/render-use-cases.ps1`; this applies to that process only and does not change the machine execution policy. Supply test-account access privately to the instructor, never in screenshots or Git. Submit a ZIP or GitHub repository URL as instructed; publishing is not performed automatically.
 
 ## Known limitations and fallback
 
@@ -122,4 +132,4 @@ Replace `StudentID` in the folder name with your actual ID. Add your name/progra
 - No evidence upload, Registrar API, SMS, payment, appeals, policy exceptions or password recovery UI. Student self-registration is available only after migration 06 and email-delivery configuration.
 - Program policies and deadlines are administrator-seeded. Each of the two records uses the examination's single deadline; future deadlines require administrative policy versioning.
 - Dashboard data is fetched in one request per table. The six-record examination dataset is supported; pagination and server-side search would be necessary beyond the project's API row limit.
-- No live database or hosted-browser test has been completed yet. Automated local checks are recorded separately from mandatory functional evidence.
+- Live database acceptance has not been completed during generation. Local automated checks and public-directory browser checks are recorded separately from mandatory authenticated functional evidence.

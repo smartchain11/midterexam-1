@@ -1,9 +1,11 @@
 import { validateSummary, validateScholarProfile, validateStudentSignup } from './domain.js';
+import { resolvePublicConfig } from './settings.js';
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-const config = window.APP_CONFIG;
-const configured = config?.supabaseUrl?.startsWith('https://') && !config.supabaseUrl.includes('YOUR_PROJECT') && config.supabaseAnonKey && !config.supabaseAnonKey.startsWith('YOUR_');
+const config = resolvePublicConfig(window.APP_CONFIG);
+window.APP_CONFIG = config;
+const configured = Boolean(config);
 const sessionKey = 'scholarship-session';
 let session;
 try { session = JSON.parse(sessionStorage.getItem(sessionKey) || 'null'); } catch { sessionStorage.removeItem(sessionKey); }

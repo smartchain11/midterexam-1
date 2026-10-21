@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2700" height="2220" viewBox="0 0 2700 2220" role="img" aria-labelledby="title description">
+<title id="title">Scholarship monitoring system UML use-case diagram</title><desc id="description">Scholar on the left, Scholarship Staff on the right, and use cases inside the system boundary between them. Dashed arrows show mandatory include and conditional extend relationships.</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#40554b" stroke-width="2"/></marker></defs><rect width="2700" height="2220" fill="white"/>
+<text font-family="Arial, sans-serif" font-size="45" fill="#203b34" text-anchor="middle" font-weight="700">
+<tspan x="1350" y="82.8">UML USE-CASE DIAGRAM</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="29" fill="#61756a" text-anchor="middle">
+<tspan x="1350" y="135.36">ADSSU Scholarship Monitoring and Academic Compliance</tspan>
+</text>
+<rect x="410" y="200" width="1880" height="1840" fill="none" stroke="#264b39" stroke-width="3.5"/>
+<text font-family="Arial, sans-serif" font-size="30" fill="#203b34" text-anchor="middle" font-weight="700">
+<tspan x="1350" y="255.2">Student Scholarship Monitoring and Academic Compliance System</tspan>
+</text>
+<polyline points="244,975 335,975" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,360 335,1950" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2456,975 2365,975" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2365,360 2365,1950" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,500 475,500" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,720 475,720" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,940 475,940" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,1160 475,1160" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2225,500 2365,500" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2225,700 2365,700" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2225,900 2365,900" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2225,1130 2365,1130" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2225,1330 2365,1330" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="2225,1510 2365,1510" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,360 1115,360" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="1585,360 2365,360" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,1690 1115,1690" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="1585,1690 2365,1690" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,1820 1115,1820" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="1585,1820 2365,1820" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="335,1950 1115,1950" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="1585,1950 2365,1950" fill="none" stroke="#40554b" stroke-width="2.8"/>
+<polyline points="945,720 1115,720" fill="none" stroke="#40554b" stroke-width="2.8" stroke-dasharray="17 11" marker-end="url(#arrow)"/>
+<polyline points="945,940 1010,940 1010,810 1350,810 1350,775" fill="none" stroke="#40554b" stroke-width="2.8" stroke-dasharray="17 11" marker-end="url(#arrow)"/>
+<polyline points="1755,1130 1670,1130 1670,1260 1585,1260" fill="none" stroke="#40554b" stroke-width="2.8" stroke-dasharray="17 11" marker-end="url(#arrow)"/>
+<polyline points="1755,1330 1670,1330 1670,1260 1585,1260" fill="none" stroke="#40554b" stroke-width="2.8" stroke-dasharray="17 11" marker-end="url(#arrow)"/>
+<polyline points="1585,980 1755,900" fill="none" stroke="#40554b" stroke-width="2.8" stroke-dasharray="17 11" marker-end="url(#arrow)"/>
+<ellipse cx="1350" cy="360" rx="235" ry="52.5" fill="#ffffff" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="1350" y="369.18">UC01  Sign In</tspan>
+</text>
+<ellipse cx="710" cy="500" rx="235" ry="65" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="710" y="492.98">UC12  Register Student Account</tspan>
+<tspan x="710" y="525.38">&amp; Confirm Email</tspan>
+</text>
+<ellipse cx="710" cy="720" rx="235" ry="55" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="710" y="729.18">UC03  Submit Grades</tspan>
+</text>
+<ellipse cx="710" cy="940" rx="235" ry="55" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="26" fill="#203b34" text-anchor="middle">
+<tspan x="710" y="948.84">UC04  Correct and Resubmit</tspan>
+</text>
+<ellipse cx="710" cy="1160" rx="235" ry="62.5" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="710" y="1152.98">UC05  View Own Status</tspan>
+<tspan x="710" y="1185.38">and History</tspan>
+</text>
+<ellipse cx="1350" cy="720" rx="235" ry="55" fill="#edf3ef" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="24" fill="#203b34" text-anchor="middle">
+<tspan x="1350" y="713.76">Validate Summary</tspan>
+<tspan x="1350" y="742.56">(required field and input checks)</tspan>
+</text>
+<ellipse cx="1350" cy="980" rx="235" ry="60" fill="#fffaf0" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="24" fill="#203b34" text-anchor="middle">
+<tspan x="1350" y="973.76">Return Evidence</tspan>
+<tspan x="1350" y="1002.56">[if evidence is unacceptable]</tspan>
+</text>
+<ellipse cx="1350" cy="1260" rx="235" ry="55" fill="#edf3ef" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="24" fill="#203b34" text-anchor="middle">
+<tspan x="1350" y="1253.76">Record Audit Event</tspan>
+<tspan x="1350" y="1282.56">(actor, timestamp and result)</tspan>
+</text>
+<ellipse cx="1990" cy="500" rx="235" ry="62.5" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="1990" y="492.98">UC02  Register Scholar</tspan>
+<tspan x="1990" y="525.38">and Assign Policy</tspan>
+</text>
+<ellipse cx="1990" cy="700" rx="235" ry="62.5" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="1990" y="692.98">UC13  Approve Initial</tspan>
+<tspan x="1990" y="725.38">Scholarship Assignment</tspan>
+</text>
+<ellipse cx="1990" cy="900" rx="235" ry="75" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="23" fill="#203b34" text-anchor="middle">
+<tspan x="1990" y="880.22">UC06  Review Evidence</tspan>
+<tspan x="1990" y="907.82">Extension point:</tspan>
+<tspan x="1990" y="935.42">evidence found unacceptable</tspan>
+</text>
+<ellipse cx="1990" cy="1130" rx="235" ry="55" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="26" fill="#203b34" text-anchor="middle">
+<tspan x="1990" y="1138.84">UC07  Evaluate Compliance</tspan>
+</text>
+<ellipse cx="1990" cy="1330" rx="235" ry="55" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="1990" y="1339.18">UC08  Decide Renewal</tspan>
+</text>
+<ellipse cx="1990" cy="1510" rx="235" ry="55" fill="#f7faf8" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="25" fill="#203b34" text-anchor="middle">
+<tspan x="1990" y="1518.5">UC11  View Decision History</tspan>
+</text>
+<ellipse cx="1350" cy="1690" rx="235" ry="47.5" fill="#ffffff" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="1350" y="1699.18">UC09  View Dashboard</tspan>
+</text>
+<ellipse cx="1350" cy="1820" rx="235" ry="47.5" fill="#ffffff" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="27" fill="#203b34" text-anchor="middle">
+<tspan x="1350" y="1829.18">UC10  Search and Filter</tspan>
+</text>
+<ellipse cx="1350" cy="1950" rx="235" ry="55" fill="#ffffff" stroke="#264b39" stroke-width="2.8"/>
+<text font-family="Arial, sans-serif" font-size="25" fill="#203b34" text-anchor="middle">
+<tspan x="1350" y="1943.5">UC14  Browse Scholarship</tspan>
+<tspan x="1350" y="1973.5">Directory (reference only)</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="22" fill="#203b34" text-anchor="middle">
+<tspan x="1030" y="693.48">&lt;&lt;include&gt;&gt;</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="22" fill="#203b34" text-anchor="middle">
+<tspan x="1182.5" y="851.48">&lt;&lt;include&gt;&gt;</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="22" fill="#203b34" text-anchor="middle">
+<tspan x="1670" y="1107.48">&lt;&lt;include&gt;&gt;</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="22" fill="#203b34" text-anchor="middle">
+<tspan x="1670" y="1367.48">&lt;&lt;include&gt;&gt;</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="22" fill="#203b34" text-anchor="middle">
+<tspan x="1672" y="875.48">&lt;&lt;extend&gt;&gt;</tspan>
+</text>
+<circle cx="180" cy="905" r="31" fill="white" stroke="#203b34" stroke-width="4.5"/>
+<polyline points="180,936 180,1040" fill="none" stroke="#203b34" stroke-width="4.5"/>
+<polyline points="116,975 180,951 244,975" fill="none" stroke="#203b34" stroke-width="4.5"/>
+<polyline points="129,1110 180,1040 231,1110" fill="none" stroke="#203b34" stroke-width="4.5"/>
+<text font-family="Arial, sans-serif" font-size="29" fill="#203b34" text-anchor="middle" font-weight="700">
+<tspan x="180" y="1187.36">Scholar</tspan>
+</text>
+<circle cx="2520" cy="905" r="31" fill="white" stroke="#203b34" stroke-width="4.5"/>
+<polyline points="2520,936 2520,1040" fill="none" stroke="#203b34" stroke-width="4.5"/>
+<polyline points="2456,975 2520,951 2584,975" fill="none" stroke="#203b34" stroke-width="4.5"/>
+<polyline points="2469,1110 2520,1040 2571,1110" fill="none" stroke="#203b34" stroke-width="4.5"/>
+<text font-family="Arial, sans-serif" font-size="29" fill="#203b34" text-anchor="middle" font-weight="700">
+<tspan x="2520" y="1169.96">Scholarship</tspan>
+<tspan x="2520" y="1204.76">Staff</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="23" fill="#61756a" text-anchor="middle">
+<tspan x="1350" y="2100.32">Solid lines: actor associations   |   Dashed arrows: include / extend relationships</tspan>
+</text>
+<text font-family="Arial, sans-serif" font-size="22" fill="#61756a" text-anchor="middle">
+<tspan x="1350" y="2149.98">Authentication is a precondition for protected goals. Directory browsing is public and informational.</tspan>
+</text>
+</svg>

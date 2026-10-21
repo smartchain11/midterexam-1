@@ -10,6 +10,8 @@ After the ADSSU profile update, the expanded local suite completed with **14 pas
 
 After adding student self-registration, `node --test tests/policy.test.js` completed with **18 passed, 0 failed**, including four signup-validation cases. Syntax checks passed for `app.js` and `scripts/create-test-users.js`. This verifies local validation only; migration 06, email confirmation, pending registration approval and identity-claim protections remain pending live execution.
 
+After directory integration and deployment-configuration fallback, `node --test tests/directory-config.test.js tests/policy.test.js` completed with **28 passed, 0 failed**. Browser checks confirmed 13 default cards, 21 in All listings, eight in Missing document checklists, a single Bunawan search match and a working requirements dialog containing its residency-document requirement. The available viewport had no page-level horizontal overflow and no setup warning. Six HTTP checks confirmed the page, settings module, directory module and JSON return 200 while SQL/admin scripts remain blocked with 403. Missing-local-config fallback and secret-key rejection were verified as module tests, not as a production-host deployment test. These checks do not establish that live Supabase authentication or exam workflows pass.
+
 Static-server smoke checks: **7 passed**, covering HTML/JS/CSS responses, missing configuration returning 404 without crashing, protected SQL/server source returning 403, and a successful request after the missing file. Browser inspection confirmed the login page and setup warning render, with no horizontal overflow at the available viewport. This is not a completed responsive-device or authenticated workflow test.
 
 ## Expected seeded outcomes
@@ -103,6 +105,6 @@ Student signup has no role/policy choice. A second browser session is recommende
 | True refresh-persistence evidence | Must be performed in browser; SQL transaction tests alone cannot establish it |
 | Current assignments only | Semester dashboard's assigned count is current assignments, not historical assignment membership |
 | Cloud outage | Local frontend remains runnable; cloud data/auth operations do not work offline |
-| Diagram image export | UML/ERD sources supplied; rendered exports still need attaching if required |
+| Diagram image export | Use-case PNG/SVG supplied; ERD image export remains a submission task if required |
 
 Add every newly observed defect with reproduction steps, impact and resolution. Do not replace Not run with Pass without execution evidence.
