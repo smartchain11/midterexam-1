@@ -20,7 +20,7 @@ function render() {
   $('#directory-count').textContent = `${visible.length} of ${listings.length} listings`;
   $('#directory-status').hidden = visible.length > 0;
   $('#directory-status').textContent = 'No scholarships match your search.';
-  $('#directory-cards').innerHTML = visible.map(item => `<article class="card scholarship-card"><span class="eyebrow">PORTAL LISTING · NOT VERIFIED</span><h3>${escape(item.name)}</h3><p class="muted">${escape(item.description)}</p><p class="small"><strong>Grade label on source:</strong> ${escape(item.reported_grade_requirement)}</p>${needsReview(item).length ? '<p class="small review-note">Data needs review — see requirements.</p>' : '<p class="small muted">Confirm rules and availability with the provider.</p>'}<button class="secondary" data-scholarship="${escape(item.source_ref)}">View requirements →</button></article>`).join('');
+  $('#directory-cards').innerHTML = visible.map(item => `<article class="card scholarship-card"><span class="eyebrow">PORTAL LISTING</span><h3>${escape(item.name)}</h3><p class="muted">${escape(item.description)}</p><p class="small"><strong>Grade label on source:</strong> ${escape(item.reported_grade_requirement)}</p>${needsReview(item).length ? '<p class="small review-note">Data needs review — see requirements.</p>' : '<p class="small muted">Confirm rules and availability with the provider.</p>'}<button class="secondary" data-scholarship="${escape(item.source_ref)}">View requirements →</button></article>`).join('');
 }
 
 function showDetails(ref, button) {
