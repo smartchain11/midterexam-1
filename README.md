@@ -16,7 +16,7 @@ set role = 'Staff'
 where email = 'YOUR_STAFF_EMAIL';
 ```
 
-6. This project's public Supabase URL and publishable key are included in `settings.js` as deployment defaults. For a different project or local override, copy `config.example.js` to `config.js` and set its `supabaseUrl` and `supabaseAnonKey`. A valid local override takes precedence. These are public browser configuration values. Never use a secret or service-role key. `config.js` remains excluded from Git; `settings.js` intentionally contains browser-public configuration only. Missing local configuration no longer blocks the hosted app when the public defaults are available. The optional administrator setup command still reads your local `config.js`.
+6. This project's public Supabase URL and publishable key are included in `settings.js` as deployment defaults. For a different hosted project, update those public values in `settings.js`. For a localhost override, copy `config.example.js` to `config.js` and set its `supabaseUrl` and `supabaseAnonKey`. A valid localhost override takes precedence; hosted pages do not request `config.js`. These are public browser configuration values. Never use a secret or service-role key. `config.js` remains excluded from Git; `settings.js` intentionally contains browser-public configuration only. The optional administrator setup command still reads your local `config.js`.
 7. Install Node.js 20.11+ and run `npm start` in this folder. No npm install is necessary. Open `http://127.0.0.1:3000`.
 
 ```powershell
@@ -26,7 +26,7 @@ npm start
 
 If PowerShell blocks `npm.ps1`, use `npm.cmd start` / `npm.cmd test`, or `node server.js` / `node --test tests/policy.test.js`. No execution-policy change is needed.
 
-The optional Node server only serves static files; the application backend is Supabase. Static deployment requires `index.html`, `styles.css`, `app.js`, `domain.js`, `settings.js`, `catalogue.js`, `assets/adssu-logo.png`, and `data/scholarship-reference.json`. Include a public `config.js` only if using a local/project override. Do not serve database/test documents publicly. The included server uses an exact file allowlist, including the single public directory JSON file but no SQL/admin scripts. The logo is used in the header, login page and favicon; its source is recorded in `assets/README.md`.
+The optional Node server only serves static files; the application backend is Supabase. Static deployment requires `index.html`, `styles.css`, `app.js`, `domain.js`, `settings.js`, `catalogue.js`, `assets/adssu-logo.png`, and `data/scholarship-reference.json`. `config.js` is only loaded on localhost for local overrides. Do not serve database/test documents publicly. The included server uses an exact file allowlist, including the single public directory JSON file but no SQL/admin scripts. The logo is used in the header, login page and favicon; its source is recorded in `assets/README.md`.
 
 ## Scholarship reference directory
 

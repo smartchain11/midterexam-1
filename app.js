@@ -1,5 +1,9 @@
 import { validateSummary, validateScholarProfile, validateStudentSignup } from './domain.js';
-import { resolvePublicConfig } from './settings.js';
+import { resolvePublicConfig } from './settings.js?v=20261021-2';
+
+if (['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname)) {
+  try { await import('./config.js'); } catch {}
+}
 
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
